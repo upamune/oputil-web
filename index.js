@@ -19,7 +19,8 @@
     function convert(value) {
         let v = value
             .trim()
-            .split(/\r?\n/);
+            .split(/\r?\n/)
+            .filter(v => v);
 
         if (withDoubleQuote) v = v.map(v => `"${v}"`)
         return v.join(",");
